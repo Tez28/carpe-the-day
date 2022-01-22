@@ -12,7 +12,7 @@ var twoP = $("#2hr");
 var threeP = $("#3hr");
 var fourP = $("#4hr");
 var fiveP = $("#5hr");
-var time = moment().hours();
+var time = moment().hour();
 var userTask;
 var timeSpan;
 
@@ -29,6 +29,7 @@ var date = setInterval(function() {
 function runCal(){
     $(".description").each(function() {
         var timeRun = parseInt($(this).attr("id"));
+        console.log(timeRun);
         time = parseInt(time);
         // sets perameters for what state task is in past future present
         if (time > timeRun ) {
