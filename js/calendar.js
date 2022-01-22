@@ -29,7 +29,7 @@ var date = setInterval(function() {
 function runCal(){
     $(".form-control").each(function() {
         var timeRun = parseInt($(this).attr("id"));
-        time = parseInt(time;
+        time = parseInt(time);
         // sets perameters for what state task is in past future present
         if (time > timeRun ) {
             $(this).addClass("past");
