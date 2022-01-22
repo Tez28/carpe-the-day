@@ -23,6 +23,24 @@ var date = setInterval(function() {
     .substring(0,3).toUpperCase();
 },100);
 
+
+// function tracks tasks and times throughout day
+
+function runCal(){
+    $(".form-control").each(function() {
+        var timeRun = parseInt($(this).attr("id"));
+        time = parseInt(time;
+        // sets perameters for what state task is in past future present
+        if (time > timeRun ) {
+            $(this).addClass("past");
+        } else if (time < timeRun) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("present")
+        }
+    });
+}
+// function sets defines local storage
 function startPage() {
     var time8 = JSON.parse(localStorage.getItem("8:00 am"));
     eightA.val(time8);
