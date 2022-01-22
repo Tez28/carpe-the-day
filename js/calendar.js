@@ -11,7 +11,7 @@ var oneP = $("#1hr");
 var twoP = $("#2hr");
 var threeP = $("#3hr");
 var fourP = $("#4hr");
-var five = $("#5hr");
+var fiveP = $("#5hr");
 var time = moment().hours();
 var userTask;
 var timeSpan;
@@ -27,12 +27,13 @@ var date = setInterval(function() {
 // function tracks tasks and times throughout day
 
 function runCal(){
-    $(".form-control").each(function() {
+    $(".description").each(function() {
         var timeRun = parseInt($(this).attr("id"));
         time = parseInt(time);
         // sets perameters for what state task is in past future present
         if (time > timeRun ) {
             $(this).addClass("past");
+            console.log(this)
         } else if (time < timeRun) {
             $(this).addClass("future");
         } else {
@@ -44,6 +45,7 @@ function runCal(){
 function startPage() {
     var time8 = JSON.parse(localStorage.getItem("8:00 am"));
     eightA.val(time8);
+    console.log()
 
     var time9 = JSON.parse(localStorage.getItem("9:00 am"));
     nineA.val(time9);
@@ -58,7 +60,7 @@ function startPage() {
     twelveP.val(time12);
 
     var time1 = JSON.parse(localStorage.getItem("1:00 pm"));
-    oneA.val(time1);
+    oneP.val(time1);
 
     var time2 = JSON.parse(localStorage.getItem("2:00 pm"));
     twoP.val(time2);
@@ -73,3 +75,15 @@ function startPage() {
     fiveP.val(time5);
 }
 
+
+$(document).ready(function(){
+    runCal();
+    startPage();
+
+    //local storage buttons functionality
+    $(".saveBtn").on("click", function(){
+        userTask = $(this).siblings(".description").val().trim();
+        timeSpan = $(this).siblings(".hour").text().trim();
+        localStorage.setItem(timeSpan, JSON.stringify(userTask));
+    })
+})
