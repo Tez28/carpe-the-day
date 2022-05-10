@@ -11,7 +11,7 @@ When users access the link they will be faced with a calendar application. The W
 tracks the current date and time down to the second. Users are able to input their tasks into the individual fields and save them for future
 reference. Users will see agrey bar for past tasks, red bar is shown for present tasks and green bar for future tasks.
 
-## Build
+## Technology
 HTML, CSS and JavaScript
 
 ## App Link
